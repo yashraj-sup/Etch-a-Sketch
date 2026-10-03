@@ -13,6 +13,8 @@ for(let i=0;i<size*size;i++){
         const g =Math.floor(Math.random()*256);
         const b =Math.floor(Math.random()*256);
         square.style.backgroundColor=`rgb(${r},${g},${b})`;
+        opacity=Math.min(opacity+0.1,1);
+        square.style.opacity=opacity;
     });
     container.appendChild(square);
 }
