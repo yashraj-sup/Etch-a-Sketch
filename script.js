@@ -3,12 +3,16 @@ const button=document.getElementById("resize");
 function createGrid(size){
 container.innerHTML="";
 const squareSize=800/size;
-for(i=0;i<size*size;i++){
+for(let i=0;i<size*size;i++){
     const square=document.createElement("div");
     square.style.width=squareSize+"px";
     square.style.height=squareSize+"px";
+    let opacity=0;
     square.addEventListener("mouseenter",()=>{
-        square.style.backgroundColor="black";
+        const r =Math.floor(Math.random() * 256);
+        const g =Math.floor(Math.random()*256);
+        const b =Math.floor(Math.random()*256);
+        square.style.backgroundColor=`rgb(${r},${g},${b})`;
     });
     container.appendChild(square);
 }
